@@ -1,9 +1,8 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
-## source code is governed by an MIT-style license that can be found in the
-## LICENSE file.
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
+## in root directory.
 ##
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##.title~
@@ -16,13 +15,13 @@ repository: https://github.com/robmllze/df_screen_core
 ## -----------------------------------------------------------------------------
 
 environment:
-  sdk: ">=3.5.0 <4.0.0"
+  sdk: ">=3.0.0 < 4.0.0"
 
 ## -----------------------------------------------------------------------------
 
 dependencies:
-  df_generate_dart_models_core: ^0.3.0
-  df_log: ^0.2.1
+  df_generate_dart_models_core: ">=0.2.1 <0.3.0"
+  df_log: ^0.1.2
 
 ## -----------------------------------------------------------------------------
 
