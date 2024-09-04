@@ -92,8 +92,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   }) {
     return ModelGenerateScreenBindings(
       args: args,
-      isAccessibleOnlyIfLoggedInAndVerified:
-          isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
       isRedirectable: isRedirectable,
@@ -158,7 +157,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     try {
       if (source!.isNotEmpty) {
         final decoded = jsonDecode(source);
-        return ModelGenerateScreenBindings.fromJson(decoded);
+        final data = letMapOrNull<String, dynamic>(decoded);
+        return ModelGenerateScreenBindings.fromJson(data);
       } else {
         return const ModelGenerateScreenBindings.c2();
       }
@@ -182,7 +182,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     Map<String, dynamic>? otherData,
   ) {
     try {
-      final args = letMap(otherData?['args'])
+      final args = letMapOrNull<dynamic, dynamic>(otherData?['args'])
           ?.map(
             (p0, p1) => MapEntry(
               p0,
@@ -191,22 +191,23 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           )
           .nonNulls
           .nullIfEmpty;
-      final isAccessibleOnlyIfLoggedInAndVerified =
-          letBool(otherData?['isAccessibleOnlyIfLoggedInAndVerified']);
+      final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
+        otherData?['isAccessibleOnlyIfLoggedInAndVerified'],
+      );
       final isAccessibleOnlyIfLoggedIn =
-          letBool(otherData?['isAccessibleOnlyIfLoggedIn']);
+          letAsOrNull<bool>(otherData?['isAccessibleOnlyIfLoggedIn']);
       final isAccessibleOnlyIfLoggedOut =
-          letBool(otherData?['isAccessibleOnlyIfLoggedOut']);
-      final isRedirectable = letBool(otherData?['isRedirectable']);
+          letAsOrNull<bool>(otherData?['isAccessibleOnlyIfLoggedOut']);
+      final isRedirectable = letAsOrNull<bool>(otherData?['isRedirectable']);
       final path = otherData?['path']?.toString().trim().nullIfEmpty;
-      final queryParameters = letSet(otherData?['queryParameters'])
+      final queryParameters = letSetOrNull<dynamic>(otherData?['queryParameters'])
           ?.map(
             (p0) => p0,
           )
           .nonNulls
           .nullIfEmpty
           ?.toSet();
-      final internalParameters = letSet(otherData?['internalParameters'])
+      final internalParameters = letSetOrNull<dynamic>(otherData?['internalParameters'])
           ?.map(
             (p0) => p0,
           )
@@ -216,12 +217,10 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
       final title = otherData?['title']?.toString().trim().nullIfEmpty;
       final className = otherData?['className']?.toString().trim().nullIfEmpty;
       final screenKey = otherData?['screenKey']?.toString().trim().nullIfEmpty;
-      final keyStringCase =
-          otherData?['keyStringCase']?.toString().trim().nullIfEmpty;
+      final keyStringCase = otherData?['keyStringCase']?.toString().trim().nullIfEmpty;
       return ModelGenerateScreenBindings(
         args: args,
-        isAccessibleOnlyIfLoggedInAndVerified:
-            isAccessibleOnlyIfLoggedInAndVerified,
+        isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
         isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
         isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
         isRedirectable: isRedirectable,
@@ -282,8 +281,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           )
           .nonNulls
           .nullIfEmpty;
-      final isAccessibleOnlyIfLoggedInAndVerified0 =
-          this.isAccessibleOnlyIfLoggedInAndVerified;
+      final isAccessibleOnlyIfLoggedInAndVerified0 = this.isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = this.isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = this.isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = this.isRedirectable;
@@ -316,8 +314,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
         'keyStringCase': keyStringCase0,
         'isRedirectable': isRedirectable0,
         'isAccessibleOnlyIfLoggedOut': isAccessibleOnlyIfLoggedOut0,
-        'isAccessibleOnlyIfLoggedInAndVerified':
-            isAccessibleOnlyIfLoggedInAndVerified0,
+        'isAccessibleOnlyIfLoggedInAndVerified': isAccessibleOnlyIfLoggedInAndVerified0,
         'isAccessibleOnlyIfLoggedIn': isAccessibleOnlyIfLoggedIn0,
         'internalParameters': internalParameters0,
         'className': className0,
@@ -358,8 +355,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   bool? get isAccessibleOnlyIfLoggedInField => this.isAccessibleOnlyIfLoggedIn;
 
   // isAccessibleOnlyIfLoggedOut.
-  bool? get isAccessibleOnlyIfLoggedOutField =>
-      this.isAccessibleOnlyIfLoggedOut;
+  bool? get isAccessibleOnlyIfLoggedOutField => this.isAccessibleOnlyIfLoggedOut;
 
   // isRedirectable.
   bool? get isRedirectableField => this.isRedirectable;
@@ -394,8 +390,7 @@ final class ModelGenerateScreenBindingsFieldNames {
   //
 
   static const args = 'args';
-  static const isAccessibleOnlyIfLoggedInAndVerified =
-      'isAccessibleOnlyIfLoggedInAndVerified';
+  static const isAccessibleOnlyIfLoggedInAndVerified = 'isAccessibleOnlyIfLoggedInAndVerified';
   static const isAccessibleOnlyIfLoggedIn = 'isAccessibleOnlyIfLoggedIn';
   static const isAccessibleOnlyIfLoggedOut = 'isAccessibleOnlyIfLoggedOut';
   static const isRedirectable = 'isRedirectable';
