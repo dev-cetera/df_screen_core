@@ -19,13 +19,26 @@ part '_model_screen_configuration.g.dart';
 @GenerateDartModel(
   shouldInherit: true,
   fields: {
-    Field(fieldPath: ['args'], fieldType: Map<dynamic, dynamic>, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedInAndVerified'], fieldType: bool, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedIn'], fieldType: bool, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedOut'], fieldType: bool, nullable: true),
+    Field(
+        fieldPath: ['args'], fieldType: Map<dynamic, dynamic>, nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedInAndVerified'],
+        fieldType: bool,
+        nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedIn'],
+        fieldType: bool,
+        nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedOut'],
+        fieldType: bool,
+        nullable: true,),
     Field(fieldPath: ['isRedirectable'], fieldType: bool, nullable: true),
     Field(fieldPath: ['path'], fieldType: String, nullable: true),
-    Field(fieldPath: ['prevConfiguration'], fieldType: ModelScreenConfiguration, nullable: true),
+    Field(
+        fieldPath: ['prevConfiguration'],
+        fieldType: ModelScreenConfiguration,
+        nullable: true,),
     Field(fieldPath: ['title'], fieldType: String, nullable: true),
   },
 )
@@ -66,7 +79,8 @@ ModelScreenConfiguration urlToScreenConfiguration({
   return ModelScreenConfiguration(
     args: args,
     isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
-    isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
+    isAccessibleOnlyIfLoggedInAndVerified:
+        isAccessibleOnlyIfLoggedInAndVerified,
     isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
     isRedirectable: isRedirectable,
     path: path,

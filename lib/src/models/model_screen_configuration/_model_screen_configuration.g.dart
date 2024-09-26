@@ -76,7 +76,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   }) {
     return ModelScreenConfiguration(
       args: args,
-      isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedInAndVerified:
+          isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
       isRedirectable: isRedirectable,
@@ -181,13 +182,15 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
       final isRedirectable = letAsOrNull<bool>(otherData?['isRedirectable']);
       final path = otherData?['path']?.toString().trim().nullIfEmpty;
       final prevConfiguration = () {
-        final a = letMapOrNull<String, dynamic>(otherData?['prevConfiguration']);
+        final a =
+            letMapOrNull<String, dynamic>(otherData?['prevConfiguration']);
         return a != null ? ModelScreenConfiguration.fromJson(a) : null;
       }();
       final title = otherData?['title']?.toString().trim().nullIfEmpty;
       return ModelScreenConfiguration(
         args: args,
-        isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
+        isAccessibleOnlyIfLoggedInAndVerified:
+            isAccessibleOnlyIfLoggedInAndVerified,
         isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
         isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
         isRedirectable: isRedirectable,
@@ -244,7 +247,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
           )
           .nonNulls
           .nullIfEmpty;
-      final isAccessibleOnlyIfLoggedInAndVerified0 = this.isAccessibleOnlyIfLoggedInAndVerified;
+      final isAccessibleOnlyIfLoggedInAndVerified0 =
+          this.isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = this.isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = this.isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = this.isRedirectable;
@@ -257,7 +261,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
         'path': path0,
         'isRedirectable': isRedirectable0,
         'isAccessibleOnlyIfLoggedOut': isAccessibleOnlyIfLoggedOut0,
-        'isAccessibleOnlyIfLoggedInAndVerified': isAccessibleOnlyIfLoggedInAndVerified0,
+        'isAccessibleOnlyIfLoggedInAndVerified':
+            isAccessibleOnlyIfLoggedInAndVerified0,
         'isAccessibleOnlyIfLoggedIn': isAccessibleOnlyIfLoggedIn0,
         'args': args0,
       };
@@ -296,7 +301,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   bool? get isAccessibleOnlyIfLoggedInField => this.isAccessibleOnlyIfLoggedIn;
 
   // isAccessibleOnlyIfLoggedOut.
-  bool? get isAccessibleOnlyIfLoggedOutField => this.isAccessibleOnlyIfLoggedOut;
+  bool? get isAccessibleOnlyIfLoggedOutField =>
+      this.isAccessibleOnlyIfLoggedOut;
 
   // isRedirectable.
   bool? get isRedirectableField => this.isRedirectable;
@@ -305,7 +311,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   String? get pathField => this.path;
 
   // prevConfiguration.
-  ModelScreenConfiguration? get prevConfigurationField => this.prevConfiguration;
+  ModelScreenConfiguration? get prevConfigurationField =>
+      this.prevConfiguration;
 
   // title.
   String? get titleField => this.title;
@@ -319,7 +326,8 @@ final class ModelScreenConfigurationFieldNames {
   //
 
   static const args = 'args';
-  static const isAccessibleOnlyIfLoggedInAndVerified = 'isAccessibleOnlyIfLoggedInAndVerified';
+  static const isAccessibleOnlyIfLoggedInAndVerified =
+      'isAccessibleOnlyIfLoggedInAndVerified';
   static const isAccessibleOnlyIfLoggedIn = 'isAccessibleOnlyIfLoggedIn';
   static const isAccessibleOnlyIfLoggedOut = 'isAccessibleOnlyIfLoggedOut';
   static const isRedirectable = 'isRedirectable';

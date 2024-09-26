@@ -19,14 +19,30 @@ part '_model_generate_screen_bindings.g.dart';
 @GenerateDartModel(
   shouldInherit: true,
   fields: {
-    Field(fieldPath: ['args'], fieldType: Map<dynamic, dynamic>, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedInAndVerified'], fieldType: bool, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedIn'], fieldType: bool, nullable: true),
-    Field(fieldPath: ['isAccessibleOnlyIfLoggedOut'], fieldType: bool, nullable: true),
+    Field(
+        fieldPath: ['args'], fieldType: Map<dynamic, dynamic>, nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedInAndVerified'],
+        fieldType: bool,
+        nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedIn'],
+        fieldType: bool,
+        nullable: true,),
+    Field(
+        fieldPath: ['isAccessibleOnlyIfLoggedOut'],
+        fieldType: bool,
+        nullable: true,),
     Field(fieldPath: ['isRedirectable'], fieldType: bool, nullable: true),
     Field(fieldPath: ['path'], fieldType: String, nullable: true),
-    Field(fieldPath: ['queryParameters'], fieldType: Set<dynamic>, nullable: true),
-    Field(fieldPath: ['internalParameters'], fieldType: Set<dynamic>, nullable: true),
+    Field(
+        fieldPath: ['queryParameters'],
+        fieldType: Set<dynamic>,
+        nullable: true,),
+    Field(
+        fieldPath: ['internalParameters'],
+        fieldType: Set<dynamic>,
+        nullable: true,),
     Field(fieldPath: ['title'], fieldType: String, nullable: true),
     Field(fieldPath: ['className'], fieldType: String, nullable: true),
     Field(fieldPath: ['screenKey'], fieldType: String, nullable: true),
