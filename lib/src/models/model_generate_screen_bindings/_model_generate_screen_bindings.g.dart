@@ -10,6 +10,7 @@
 // ignore_for_file: annotate_overrides
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
+// ignore_for_file: require_trailing_commas
 // ignore_for_file: unnecessary_non_null_assertion
 // ignore_for_file: unnecessary_null_comparison
 // ignore_for_file: unnecessary_question_mark
@@ -118,6 +119,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     }
   }
 
+  @pragma('vm:prefer-inline')
   static ModelGenerateScreenBindings? fromOrNull(
     BaseModel? other,
   ) {
@@ -135,6 +137,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     }
   }
 
+  @pragma('vm:prefer-inline')
   static ModelGenerateScreenBindings? ofOrNull(
     ModelGenerateScreenBindings? other,
   ) {
@@ -157,9 +160,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   ) {
     try {
       if (source!.isNotEmpty) {
-        final decoded = jsonDecode(source);
-        final data = letMapOrNull<String, dynamic>(decoded);
-        return ModelGenerateScreenBindings.fromJson(data);
+        final decoded = letMapOrNull<String, dynamic>(jsonDecode(source));
+        return ModelGenerateScreenBindings.fromJson(decoded);
       } else {
         return const ModelGenerateScreenBindings.c2();
       }
@@ -193,8 +195,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           .nonNulls
           .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
-        otherData?['isAccessibleOnlyIfLoggedInAndVerified'],
-      );
+          otherData?['isAccessibleOnlyIfLoggedInAndVerified']);
       final isAccessibleOnlyIfLoggedIn =
           letAsOrNull<bool>(otherData?['isAccessibleOnlyIfLoggedIn']);
       final isAccessibleOnlyIfLoggedOut =
@@ -276,8 +277,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     bool includeNulls = false,
   }) {
     try {
-      final args0 = this
-          .args
+      final args0 = args
           ?.map(
             (p0, p1) => MapEntry(
               p0,
@@ -287,31 +287,29 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           .nonNulls
           .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
-          this.isAccessibleOnlyIfLoggedInAndVerified;
-      final isAccessibleOnlyIfLoggedIn0 = this.isAccessibleOnlyIfLoggedIn;
-      final isAccessibleOnlyIfLoggedOut0 = this.isAccessibleOnlyIfLoggedOut;
-      final isRedirectable0 = this.isRedirectable;
-      final path0 = this.path?.trim().nullIfEmpty;
-      final queryParameters0 = this
-          .queryParameters
+          isAccessibleOnlyIfLoggedInAndVerified;
+      final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
+      final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
+      final isRedirectable0 = isRedirectable;
+      final path0 = path?.trim().nullIfEmpty;
+      final queryParameters0 = queryParameters
           ?.map(
             (p0) => p0,
           )
           .nonNulls
           .nullIfEmpty
           ?.toList();
-      final internalParameters0 = this
-          .internalParameters
+      final internalParameters0 = internalParameters
           ?.map(
             (p0) => p0,
           )
           .nonNulls
           .nullIfEmpty
           ?.toList();
-      final title0 = this.title?.trim().nullIfEmpty;
-      final className0 = this.className?.trim().nullIfEmpty;
-      final screenKey0 = this.screenKey?.trim().nullIfEmpty;
-      final keyStringCase0 = this.keyStringCase?.trim().nullIfEmpty;
+      final title0 = title?.trim().nullIfEmpty;
+      final className0 = className?.trim().nullIfEmpty;
+      final screenKey0 = screenKey?.trim().nullIfEmpty;
+      final keyStringCase0 = keyStringCase?.trim().nullIfEmpty;
       final withNulls = {
         'title': title0,
         'screenKey': screenKey0,
@@ -339,12 +337,91 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   //
 
   @override
-  ModelGenerateScreenBindings copyWith(BaseModel? other, {bool merge = false}) {
-    final a = this.toJson();
+  ModelGenerateScreenBindings mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
+    final a = toJson();
     final b = other?.toJson() ?? {};
-    final data0 = merge ? mergeDataDeep(a, b) : {...a, ...b};
-    final data1 = letMapOrNull<String, dynamic>(data0);
-    return ModelGenerateScreenBindings.fromJson(data1);
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelGenerateScreenBindings.fromJson(data.cast());
+  }
+
+  //
+  //
+  //
+
+  ModelGenerateScreenBindings copyWith({
+    Map<dynamic, dynamic>? args,
+    bool? isAccessibleOnlyIfLoggedInAndVerified,
+    bool? isAccessibleOnlyIfLoggedIn,
+    bool? isAccessibleOnlyIfLoggedOut,
+    bool? isRedirectable,
+    String? path,
+    Set<dynamic>? queryParameters,
+    Set<dynamic>? internalParameters,
+    String? title,
+    String? className,
+    String? screenKey,
+    String? keyStringCase,
+  }) {
+    return ModelGenerateScreenBindings.c2(
+      args: args ?? this.args,
+      isAccessibleOnlyIfLoggedInAndVerified:
+          isAccessibleOnlyIfLoggedInAndVerified ??
+              this.isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedIn:
+          isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
+      isAccessibleOnlyIfLoggedOut:
+          isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
+      isRedirectable: isRedirectable ?? this.isRedirectable,
+      path: path ?? this.path,
+      queryParameters: queryParameters ?? this.queryParameters,
+      internalParameters: internalParameters ?? this.internalParameters,
+      title: title ?? this.title,
+      className: className ?? this.className,
+      screenKey: screenKey ?? this.screenKey,
+      keyStringCase: keyStringCase ?? this.keyStringCase,
+    );
+  }
+
+  //
+  //
+  //
+
+  ModelGenerateScreenBindings copyWithout({
+    bool args = true,
+    bool isAccessibleOnlyIfLoggedInAndVerified = true,
+    bool isAccessibleOnlyIfLoggedIn = true,
+    bool isAccessibleOnlyIfLoggedOut = true,
+    bool isRedirectable = true,
+    bool path = true,
+    bool queryParameters = true,
+    bool internalParameters = true,
+    bool title = true,
+    bool className = true,
+    bool screenKey = true,
+    bool keyStringCase = true,
+  }) {
+    return ModelGenerateScreenBindings.c2(
+      args: args ? this.args : null,
+      isAccessibleOnlyIfLoggedInAndVerified:
+          isAccessibleOnlyIfLoggedInAndVerified
+              ? this.isAccessibleOnlyIfLoggedInAndVerified
+              : null,
+      isAccessibleOnlyIfLoggedIn:
+          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
+      isAccessibleOnlyIfLoggedOut:
+          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
+      isRedirectable: isRedirectable ? this.isRedirectable : null,
+      path: path ? this.path : null,
+      queryParameters: queryParameters ? this.queryParameters : null,
+      internalParameters: internalParameters ? this.internalParameters : null,
+      title: title ? this.title : null,
+      className: className ? this.className : null,
+      screenKey: screenKey ? this.screenKey : null,
+      keyStringCase: keyStringCase ? this.keyStringCase : null,
+    );
   }
 
   //
@@ -352,51 +429,59 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   //
 
   // args.
+  @pragma('vm:prefer-inline')
   Map<dynamic, dynamic>? get argsField => this.args;
 
   // isAccessibleOnlyIfLoggedInAndVerified.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedInAndVerifiedField =>
       this.isAccessibleOnlyIfLoggedInAndVerified;
 
   // isAccessibleOnlyIfLoggedIn.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedInField => this.isAccessibleOnlyIfLoggedIn;
 
   // isAccessibleOnlyIfLoggedOut.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedOutField =>
       this.isAccessibleOnlyIfLoggedOut;
 
   // isRedirectable.
+  @pragma('vm:prefer-inline')
   bool? get isRedirectableField => this.isRedirectable;
 
   // path.
+  @pragma('vm:prefer-inline')
   String? get pathField => this.path;
 
   // queryParameters.
+  @pragma('vm:prefer-inline')
   Set<dynamic>? get queryParametersField => this.queryParameters;
 
   // internalParameters.
+  @pragma('vm:prefer-inline')
   Set<dynamic>? get internalParametersField => this.internalParameters;
 
   // title.
+  @pragma('vm:prefer-inline')
   String? get titleField => this.title;
 
   // className.
+  @pragma('vm:prefer-inline')
   String? get classNameField => this.className;
 
   // screenKey.
+  @pragma('vm:prefer-inline')
   String? get screenKeyField => this.screenKey;
 
   // keyStringCase.
+  @pragma('vm:prefer-inline')
   String? get keyStringCaseField => this.keyStringCase;
 }
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-final class ModelGenerateScreenBindingsFieldNames {
-  //
-  //
-  //
-
+abstract final class ModelGenerateScreenBindingsFieldNames {
   static const args = 'args';
   static const isAccessibleOnlyIfLoggedInAndVerified =
       'isAccessibleOnlyIfLoggedInAndVerified';
@@ -410,10 +495,4 @@ final class ModelGenerateScreenBindingsFieldNames {
   static const className = 'className';
   static const screenKey = 'screenKey';
   static const keyStringCase = 'keyStringCase';
-
-  //
-  //
-  //
-
-  const ModelGenerateScreenBindingsFieldNames._();
 }

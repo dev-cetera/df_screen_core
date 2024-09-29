@@ -10,6 +10,7 @@
 // ignore_for_file: annotate_overrides
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
+// ignore_for_file: require_trailing_commas
 // ignore_for_file: unnecessary_non_null_assertion
 // ignore_for_file: unnecessary_null_comparison
 // ignore_for_file: unnecessary_question_mark
@@ -98,6 +99,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
     }
   }
 
+  @pragma('vm:prefer-inline')
   static ModelScreenConfiguration? fromOrNull(
     BaseModel? other,
   ) {
@@ -115,6 +117,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
     }
   }
 
+  @pragma('vm:prefer-inline')
   static ModelScreenConfiguration? ofOrNull(
     ModelScreenConfiguration? other,
   ) {
@@ -137,9 +140,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   ) {
     try {
       if (source!.isNotEmpty) {
-        final decoded = jsonDecode(source);
-        final data = letMapOrNull<String, dynamic>(decoded);
-        return ModelScreenConfiguration.fromJson(data);
+        final decoded = letMapOrNull<String, dynamic>(jsonDecode(source));
+        return ModelScreenConfiguration.fromJson(decoded);
       } else {
         return const ModelScreenConfiguration.c2();
       }
@@ -173,8 +175,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
           .nonNulls
           .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
-        otherData?['isAccessibleOnlyIfLoggedInAndVerified'],
-      );
+          otherData?['isAccessibleOnlyIfLoggedInAndVerified']);
       final isAccessibleOnlyIfLoggedIn =
           letAsOrNull<bool>(otherData?['isAccessibleOnlyIfLoggedIn']);
       final isAccessibleOnlyIfLoggedOut =
@@ -237,8 +238,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
     bool includeNulls = false,
   }) {
     try {
-      final args0 = this
-          .args
+      final args0 = args
           ?.map(
             (p0, p1) => MapEntry(
               p0,
@@ -248,13 +248,13 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
           .nonNulls
           .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
-          this.isAccessibleOnlyIfLoggedInAndVerified;
-      final isAccessibleOnlyIfLoggedIn0 = this.isAccessibleOnlyIfLoggedIn;
-      final isAccessibleOnlyIfLoggedOut0 = this.isAccessibleOnlyIfLoggedOut;
-      final isRedirectable0 = this.isRedirectable;
-      final path0 = this.path?.trim().nullIfEmpty;
-      final prevConfiguration0 = this.prevConfiguration?.toJson();
-      final title0 = this.title?.trim().nullIfEmpty;
+          isAccessibleOnlyIfLoggedInAndVerified;
+      final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
+      final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
+      final isRedirectable0 = isRedirectable;
+      final path0 = path?.trim().nullIfEmpty;
+      final prevConfiguration0 = prevConfiguration?.toJson();
+      final title0 = title?.trim().nullIfEmpty;
       final withNulls = {
         'title': title0,
         'prevConfiguration': prevConfiguration0,
@@ -278,12 +278,75 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   //
 
   @override
-  ModelScreenConfiguration copyWith(BaseModel? other, {bool merge = false}) {
-    final a = this.toJson();
+  ModelScreenConfiguration mergeWith(
+    BaseModel? other, {
+    bool deepMerge = false,
+  }) {
+    final a = toJson();
     final b = other?.toJson() ?? {};
-    final data0 = merge ? mergeDataDeep(a, b) : {...a, ...b};
-    final data1 = letMapOrNull<String, dynamic>(data0);
-    return ModelScreenConfiguration.fromJson(data1);
+    final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
+    return ModelScreenConfiguration.fromJson(data.cast());
+  }
+
+  //
+  //
+  //
+
+  ModelScreenConfiguration copyWith({
+    Map<dynamic, dynamic>? args,
+    bool? isAccessibleOnlyIfLoggedInAndVerified,
+    bool? isAccessibleOnlyIfLoggedIn,
+    bool? isAccessibleOnlyIfLoggedOut,
+    bool? isRedirectable,
+    String? path,
+    ModelScreenConfiguration? prevConfiguration,
+    String? title,
+  }) {
+    return ModelScreenConfiguration.c2(
+      args: args ?? this.args,
+      isAccessibleOnlyIfLoggedInAndVerified:
+          isAccessibleOnlyIfLoggedInAndVerified ??
+              this.isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedIn:
+          isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
+      isAccessibleOnlyIfLoggedOut:
+          isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
+      isRedirectable: isRedirectable ?? this.isRedirectable,
+      path: path ?? this.path,
+      prevConfiguration: prevConfiguration ?? this.prevConfiguration,
+      title: title ?? this.title,
+    );
+  }
+
+  //
+  //
+  //
+
+  ModelScreenConfiguration copyWithout({
+    bool args = true,
+    bool isAccessibleOnlyIfLoggedInAndVerified = true,
+    bool isAccessibleOnlyIfLoggedIn = true,
+    bool isAccessibleOnlyIfLoggedOut = true,
+    bool isRedirectable = true,
+    bool path = true,
+    bool prevConfiguration = true,
+    bool title = true,
+  }) {
+    return ModelScreenConfiguration.c2(
+      args: args ? this.args : null,
+      isAccessibleOnlyIfLoggedInAndVerified:
+          isAccessibleOnlyIfLoggedInAndVerified
+              ? this.isAccessibleOnlyIfLoggedInAndVerified
+              : null,
+      isAccessibleOnlyIfLoggedIn:
+          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
+      isAccessibleOnlyIfLoggedOut:
+          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
+      isRedirectable: isRedirectable ? this.isRedirectable : null,
+      path: path ? this.path : null,
+      prevConfiguration: prevConfiguration ? this.prevConfiguration : null,
+      title: title ? this.title : null,
+    );
   }
 
   //
@@ -291,40 +354,44 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   //
 
   // args.
+  @pragma('vm:prefer-inline')
   Map<dynamic, dynamic>? get argsField => this.args;
 
   // isAccessibleOnlyIfLoggedInAndVerified.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedInAndVerifiedField =>
       this.isAccessibleOnlyIfLoggedInAndVerified;
 
   // isAccessibleOnlyIfLoggedIn.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedInField => this.isAccessibleOnlyIfLoggedIn;
 
   // isAccessibleOnlyIfLoggedOut.
+  @pragma('vm:prefer-inline')
   bool? get isAccessibleOnlyIfLoggedOutField =>
       this.isAccessibleOnlyIfLoggedOut;
 
   // isRedirectable.
+  @pragma('vm:prefer-inline')
   bool? get isRedirectableField => this.isRedirectable;
 
   // path.
+  @pragma('vm:prefer-inline')
   String? get pathField => this.path;
 
   // prevConfiguration.
+  @pragma('vm:prefer-inline')
   ModelScreenConfiguration? get prevConfigurationField =>
       this.prevConfiguration;
 
   // title.
+  @pragma('vm:prefer-inline')
   String? get titleField => this.title;
 }
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-final class ModelScreenConfigurationFieldNames {
-  //
-  //
-  //
-
+abstract final class ModelScreenConfigurationFieldNames {
   static const args = 'args';
   static const isAccessibleOnlyIfLoggedInAndVerified =
       'isAccessibleOnlyIfLoggedInAndVerified';
@@ -334,10 +401,4 @@ final class ModelScreenConfigurationFieldNames {
   static const path = 'path';
   static const prevConfiguration = 'prevConfiguration';
   static const title = 'title';
-
-  //
-  //
-  //
-
-  const ModelScreenConfigurationFieldNames._();
 }
