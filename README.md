@@ -11,13 +11,7 @@ Dart & Flutter Packages by DevCetra.com & contributors.
 
 ## Summary
 
-Coming soon.
-
-For a full feature set, please refer to the [API reference](https://pub.dev/documentation/df_screen_core/).
-
-## Usage Example
-
-Coming soon.
+A package that provides core code for the df_screen package.
 
 ## Installation
 
