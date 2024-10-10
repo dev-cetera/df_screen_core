@@ -8,8 +8,8 @@
 //.title~
 
 // --- PUBLIC FILES ---
-export 'models/model_screen_configuration/model_screen_configuration.dart';
-export 'models/model_generate_screen_bindings/model_generate_screen_bindings.dart';
+export 'data_models/model_screen_configuration/model_screen_configuration.dart';
+export 'data_models/model_generate_screen_bindings/model_generate_screen_bindings.dart';
 
 // --- PRIVATE FILES (EXCLUDED) ---
 // export '_index.g.dart';

@@ -7,6 +7,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
+// ignore_for_file: annotate_overrides
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
 // ignore_for_file: require_trailing_commas
@@ -30,28 +31,28 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   @override
   String get $className => CLASS_NAME;
 
-  /// No description provided.
+  /// Optional arguments for screen configuration.
   final Map<dynamic, dynamic>? args;
 
-  /// No description provided.
+  /// Access allowed only for logged-in and verified users.
   final bool? isAccessibleOnlyIfLoggedInAndVerified;
 
-  /// No description provided.
+  /// Access allowed only for logged-in users.
   final bool? isAccessibleOnlyIfLoggedIn;
 
-  /// No description provided.
+  /// Access allowed only for logged-out users.
   final bool? isAccessibleOnlyIfLoggedOut;
 
-  /// No description provided.
+  /// Enables the screen to be accessed via a URL.
   final bool? isRedirectable;
 
-  /// No description provided.
+  /// The URL path for the screen (e.g., "/home").
   final String? path;
 
-  /// No description provided.
+  /// The previous configuration for the screen.
   final ModelScreenConfiguration? prevConfiguration;
 
-  /// No description provided.
+  /// The default title for the screen.
   final String? title;
 
   /// Constructs a new instance of [ModelScreenConfiguration]

@@ -7,6 +7,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
+// ignore_for_file: annotate_overrides
 // ignore_for_file: invalid_null_aware_operator
 // ignore_for_file: overridden_fields
 // ignore_for_file: require_trailing_commas
@@ -30,40 +31,40 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   @override
   String get $className => CLASS_NAME;
 
-  /// No description provided.
+  /// Optional arguments for configuration.
   final Map<dynamic, dynamic>? args;
 
-  /// No description provided.
+  /// Allows access only for logged-in and verified users.
   final bool? isAccessibleOnlyIfLoggedInAndVerified;
 
-  /// No description provided.
+  /// Allows access only for logged-in users.
   final bool? isAccessibleOnlyIfLoggedIn;
 
-  /// No description provided.
+  /// Allows access only for logged-out users.
   final bool? isAccessibleOnlyIfLoggedOut;
 
-  /// No description provided.
+  /// Enables URL redirection to this screen. If false, URL redirection is disabled.
   final bool? isRedirectable;
 
-  /// No description provided.
+  /// The URL path for the screen (e.g., "/home").
   final String? path;
 
-  /// No description provided.
+  /// Query parameters for this screen.
   final Set<dynamic>? queryParameters;
 
-  /// No description provided.
+  /// Internal parameters for this screen.
   final Set<dynamic>? internalParameters;
 
-  /// No description provided.
+  /// The default title for the screen.
   final String? title;
 
-  /// No description provided.
+  /// Base name for the generated classes.
   final String? className;
 
-  /// No description provided.
+  /// Unique key for the screen within the widget tree.
   final String? screenKey;
 
-  /// No description provided.
+  /// The string case for the keys of query and internal parameters.
   final String? keyStringCase;
 
   /// Constructs a new instance of [ModelGenerateScreenBindings]

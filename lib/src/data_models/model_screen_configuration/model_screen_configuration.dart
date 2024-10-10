@@ -23,30 +23,50 @@ part '_model_screen_configuration.g.dart';
       fieldPath: ['args'],
       fieldType: Map<dynamic, dynamic>,
       nullable: true,
+      description: 'Optional arguments for screen configuration.',
     ),
     Field(
       fieldPath: ['isAccessibleOnlyIfLoggedInAndVerified'],
       fieldType: bool,
       nullable: true,
+      description: 'Access allowed only for logged-in and verified users.',
     ),
     Field(
       fieldPath: ['isAccessibleOnlyIfLoggedIn'],
       fieldType: bool,
       nullable: true,
+      description: 'Access allowed only for logged-in users.',
     ),
     Field(
       fieldPath: ['isAccessibleOnlyIfLoggedOut'],
       fieldType: bool,
       nullable: true,
+      description: 'Access allowed only for logged-out users.',
     ),
-    Field(fieldPath: ['isRedirectable'], fieldType: bool, nullable: true),
-    Field(fieldPath: ['path'], fieldType: String, nullable: true),
+    Field(
+      fieldPath: ['isRedirectable'],
+      fieldType: bool,
+      nullable: true,
+      description: 'Enables the screen to be accessed via a URL.',
+    ),
+    Field(
+      fieldPath: ['path'],
+      fieldType: String,
+      nullable: true,
+      description: 'The URL path for the screen (e.g., "/home").',
+    ),
     Field(
       fieldPath: ['prevConfiguration'],
       fieldType: ModelScreenConfiguration,
       nullable: true,
+      description: 'The previous configuration for the screen.',
     ),
-    Field(fieldPath: ['title'], fieldType: String, nullable: true),
+    Field(
+      fieldPath: ['title'],
+      fieldType: String,
+      nullable: true,
+      description: 'The default title for the screen.',
+    ),
   },
 )
 abstract class _ModelScreenConfiguration extends Model {
@@ -86,8 +106,7 @@ ModelScreenConfiguration urlToScreenConfiguration({
   return ModelScreenConfiguration(
     args: args,
     isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
-    isAccessibleOnlyIfLoggedInAndVerified:
-        isAccessibleOnlyIfLoggedInAndVerified,
+    isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
     isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
     isRedirectable: isRedirectable,
     path: path,
