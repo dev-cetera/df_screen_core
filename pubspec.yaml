@@ -12,7 +12,7 @@
 
 name: df_screen_core
 description: A package that provides core code for the df_screen package.
-version: 0.2.4
+version: 0.3.0
 repository: https://github.com/robmllze/df_screen_core
 funding:
   - https://www.buymeacoffee.com/robmllze
@@ -31,7 +31,7 @@ environment:
 ## -----------------------------------------------------------------------------
 
 dependencies:
-  df_generate_dart_models_core: ^0.6.4
+  df_generate_dart_models_core: ^0.6.10
   df_log: ^0.2.4
 
 ## -----------------------------------------------------------------------------
