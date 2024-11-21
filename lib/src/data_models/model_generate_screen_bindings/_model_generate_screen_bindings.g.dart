@@ -2,7 +2,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
 // GENERATED - DO NOT MODIFY BY HAND
-// See: https://github.com/robmllze/df_generate_dart_models
+// See: https://github.com/DevCetra/df_generate_dart_models
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -119,8 +119,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   }) {
     return ModelGenerateScreenBindings(
       args: args,
-      isAccessibleOnlyIfLoggedInAndVerified:
-          isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
       isRedirectable: isRedirectable,
@@ -244,10 +243,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified =
           letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedInAndVerified']);
-      final isAccessibleOnlyIfLoggedIn =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedIn']);
-      final isAccessibleOnlyIfLoggedOut =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedOut']);
+      final isAccessibleOnlyIfLoggedIn = letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedIn']);
+      final isAccessibleOnlyIfLoggedOut = letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedOut']);
       final isRedirectable = letAsOrNull<bool>(json?['isRedirectable']);
       final path = json?['path']?.toString().trim().nullIfEmpty;
       final queryParameters = letSetOrNull<dynamic>(json?['queryParameters'])
@@ -257,23 +254,20 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           .nonNulls
           .nullIfEmpty
           ?.toSet();
-      final internalParameters =
-          letSetOrNull<dynamic>(json?['internalParameters'])
-              ?.map(
-                (p0) => p0,
-              )
-              .nonNulls
-              .nullIfEmpty
-              ?.toSet();
+      final internalParameters = letSetOrNull<dynamic>(json?['internalParameters'])
+          ?.map(
+            (p0) => p0,
+          )
+          .nonNulls
+          .nullIfEmpty
+          ?.toSet();
       final title = json?['title']?.toString().trim().nullIfEmpty;
       final className = json?['className']?.toString().trim().nullIfEmpty;
       final screenKey = json?['screenKey']?.toString().trim().nullIfEmpty;
-      final keyStringCase =
-          json?['keyStringCase']?.toString().trim().nullIfEmpty;
+      final keyStringCase = json?['keyStringCase']?.toString().trim().nullIfEmpty;
       return ModelGenerateScreenBindings(
         args: args,
-        isAccessibleOnlyIfLoggedInAndVerified:
-            isAccessibleOnlyIfLoggedInAndVerified,
+        isAccessibleOnlyIfLoggedInAndVerified: isAccessibleOnlyIfLoggedInAndVerified,
         isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn,
         isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut,
         isRedirectable: isRedirectable,
@@ -335,8 +329,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           )
           .nonNulls
           .nullIfEmpty;
-      final isAccessibleOnlyIfLoggedInAndVerified0 =
-          isAccessibleOnlyIfLoggedInAndVerified;
+      final isAccessibleOnlyIfLoggedInAndVerified0 = isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = isRedirectable;
@@ -367,8 +360,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
         'keyStringCase': keyStringCase0,
         'isRedirectable': isRedirectable0,
         'isAccessibleOnlyIfLoggedOut': isAccessibleOnlyIfLoggedOut0,
-        'isAccessibleOnlyIfLoggedInAndVerified':
-            isAccessibleOnlyIfLoggedInAndVerified0,
+        'isAccessibleOnlyIfLoggedInAndVerified': isAccessibleOnlyIfLoggedInAndVerified0,
         'isAccessibleOnlyIfLoggedIn': isAccessibleOnlyIfLoggedIn0,
         'internalParameters': internalParameters0,
         'className': className0,
@@ -410,12 +402,9 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     return ModelGenerateScreenBindings.assertRequired(
       args: args ?? this.args,
       isAccessibleOnlyIfLoggedInAndVerified:
-          isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
-      isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
-      isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
+          isAccessibleOnlyIfLoggedInAndVerified ?? this.isAccessibleOnlyIfLoggedInAndVerified,
+      isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
+      isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
       isRedirectable: isRedirectable ?? this.isRedirectable,
       path: path ?? this.path,
       queryParameters: queryParameters ?? this.queryParameters,
@@ -445,9 +434,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     return ModelGenerateScreenBindings.assertRequired(
       args: args ? this.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
-          isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
-              : null,
+          isAccessibleOnlyIfLoggedInAndVerified ? this.isAccessibleOnlyIfLoggedInAndVerified : null,
       isAccessibleOnlyIfLoggedIn:
           isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
       isAccessibleOnlyIfLoggedOut:
@@ -473,8 +460,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// If the field is nullable, the return value may be null; otherwise, it
   /// will always return a non-null value.
   @pragma('vm:prefer-inline')
-  bool? get isAccessibleOnlyIfLoggedInAndVerified$ =>
-      isAccessibleOnlyIfLoggedInAndVerified;
+  bool? get isAccessibleOnlyIfLoggedInAndVerified$ => isAccessibleOnlyIfLoggedInAndVerified;
 
   /// Returns the value of the [isAccessibleOnlyIfLoggedIn] field.
   /// If the field is nullable, the return value may be null; otherwise, it
@@ -544,8 +530,7 @@ abstract final class ModelGenerateScreenBindingsFieldNames {
   static const args = 'args';
 
   /// The field name of [ModelGenerateScreenBindings.isAccessibleOnlyIfLoggedInAndVerified].
-  static const isAccessibleOnlyIfLoggedInAndVerified =
-      'isAccessibleOnlyIfLoggedInAndVerified';
+  static const isAccessibleOnlyIfLoggedInAndVerified = 'isAccessibleOnlyIfLoggedInAndVerified';
 
   /// The field name of [ModelGenerateScreenBindings.isAccessibleOnlyIfLoggedIn].
   static const isAccessibleOnlyIfLoggedIn = 'isAccessibleOnlyIfLoggedIn';
