@@ -213,7 +213,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
             ),
           )
           .nonNulls
-          .nullIfEmpty;
+          .nullIfEmpty
+          ?.unmodifiable;
       final isAccessibleOnlyIfLoggedInAndVerified =
           letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedInAndVerified']);
       final isAccessibleOnlyIfLoggedIn =
@@ -315,18 +316,19 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   }
 
   @override
-  ModelScreenConfiguration mergeWith(
+  T mergeWith<T extends BaseModel>(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelScreenConfiguration.fromJson(data.cast());
+    return ModelScreenConfiguration.fromJson(data.cast()) as T;
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelScreenConfiguration copyWith({
+  static ModelScreenConfiguration copyWith(
+    ModelScreenConfiguration src, {
     Map<dynamic, dynamic>? args,
     bool? isAccessibleOnlyIfLoggedInAndVerified,
     bool? isAccessibleOnlyIfLoggedIn,
@@ -337,23 +339,24 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
     String? title,
   }) {
     return ModelScreenConfiguration.assertRequired(
-      args: args ?? this.args,
+      args: args ?? src.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
+              src.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
+          isAccessibleOnlyIfLoggedIn ?? src.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
-      isRedirectable: isRedirectable ?? this.isRedirectable,
-      path: path ?? this.path,
-      prevConfiguration: prevConfiguration ?? this.prevConfiguration,
-      title: title ?? this.title,
+          isAccessibleOnlyIfLoggedOut ?? src.isAccessibleOnlyIfLoggedOut,
+      isRedirectable: isRedirectable ?? src.isRedirectable,
+      path: path ?? src.path,
+      prevConfiguration: prevConfiguration ?? src.prevConfiguration,
+      title: title ?? src.title,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelScreenConfiguration copyWithout({
+  static ModelScreenConfiguration copyWithout(
+    ModelScreenConfiguration src, {
     bool args = true,
     bool isAccessibleOnlyIfLoggedInAndVerified = true,
     bool isAccessibleOnlyIfLoggedIn = true,
@@ -364,19 +367,19 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
     bool title = true,
   }) {
     return ModelScreenConfiguration.assertRequired(
-      args: args ? this.args : null,
+      args: args ? src.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
+              ? src.isAccessibleOnlyIfLoggedInAndVerified
               : null,
       isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
+          isAccessibleOnlyIfLoggedIn ? src.isAccessibleOnlyIfLoggedIn : null,
       isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
-      isRedirectable: isRedirectable ? this.isRedirectable : null,
-      path: path ? this.path : null,
-      prevConfiguration: prevConfiguration ? this.prevConfiguration : null,
-      title: title ? this.title : null,
+          isAccessibleOnlyIfLoggedOut ? src.isAccessibleOnlyIfLoggedOut : null,
+      isRedirectable: isRedirectable ? src.isRedirectable : null,
+      path: path ? src.path : null,
+      prevConfiguration: prevConfiguration ? src.prevConfiguration : null,
+      title: title ? src.title : null,
     );
   }
 

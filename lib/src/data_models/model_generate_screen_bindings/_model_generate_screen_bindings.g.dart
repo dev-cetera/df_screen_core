@@ -241,7 +241,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
             ),
           )
           .nonNulls
-          .nullIfEmpty;
+          .nullIfEmpty
+          ?.unmodifiable;
       final isAccessibleOnlyIfLoggedInAndVerified =
           letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedInAndVerified']);
       final isAccessibleOnlyIfLoggedIn =
@@ -256,7 +257,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
           )
           .nonNulls
           .nullIfEmpty
-          ?.toSet();
+          ?.toSet()
+          .unmodifiable;
       final internalParameters =
           letSetOrNull<dynamic>(json?['internalParameters'])
               ?.map(
@@ -264,7 +266,8 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
               )
               .nonNulls
               .nullIfEmpty
-              ?.toSet();
+              ?.toSet()
+              .unmodifiable;
       final title = json?['title']?.toString().trim().nullIfEmpty;
       final className = json?['className']?.toString().trim().nullIfEmpty;
       final screenKey = json?['screenKey']?.toString().trim().nullIfEmpty;
@@ -382,18 +385,19 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   }
 
   @override
-  ModelGenerateScreenBindings mergeWith(
+  T mergeWith<T extends BaseModel>(
     BaseModel? other, {
     bool deepMerge = false,
   }) {
     final a = toJson();
     final b = other?.toJson() ?? {};
     final data = (deepMerge ? mergeDataDeep(a, b) : {...a, ...b}) as Map;
-    return ModelGenerateScreenBindings.fromJson(data.cast());
+    return ModelGenerateScreenBindings.fromJson(data.cast()) as T;
   }
 
   /// Creates a copy of this instance, replacing the specified fields.
-  ModelGenerateScreenBindings copyWith({
+  static ModelGenerateScreenBindings copyWith(
+    ModelGenerateScreenBindings src, {
     Map<dynamic, dynamic>? args,
     bool? isAccessibleOnlyIfLoggedInAndVerified,
     bool? isAccessibleOnlyIfLoggedIn,
@@ -408,27 +412,28 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     String? keyStringCase,
   }) {
     return ModelGenerateScreenBindings.assertRequired(
-      args: args ?? this.args,
+      args: args ?? src.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
+              src.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
+          isAccessibleOnlyIfLoggedIn ?? src.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ?? this.isAccessibleOnlyIfLoggedOut,
-      isRedirectable: isRedirectable ?? this.isRedirectable,
-      path: path ?? this.path,
-      queryParameters: queryParameters ?? this.queryParameters,
-      internalParameters: internalParameters ?? this.internalParameters,
-      title: title ?? this.title,
-      className: className ?? this.className,
-      screenKey: screenKey ?? this.screenKey,
-      keyStringCase: keyStringCase ?? this.keyStringCase,
+          isAccessibleOnlyIfLoggedOut ?? src.isAccessibleOnlyIfLoggedOut,
+      isRedirectable: isRedirectable ?? src.isRedirectable,
+      path: path ?? src.path,
+      queryParameters: queryParameters ?? src.queryParameters,
+      internalParameters: internalParameters ?? src.internalParameters,
+      title: title ?? src.title,
+      className: className ?? src.className,
+      screenKey: screenKey ?? src.screenKey,
+      keyStringCase: keyStringCase ?? src.keyStringCase,
     );
   }
 
   /// Creates a copy of this instance, removing the specified fields.
-  ModelGenerateScreenBindings copyWithout({
+  static ModelGenerateScreenBindings copyWithout(
+    ModelGenerateScreenBindings src, {
     bool args = true,
     bool isAccessibleOnlyIfLoggedInAndVerified = true,
     bool isAccessibleOnlyIfLoggedIn = true,
@@ -443,23 +448,23 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     bool keyStringCase = true,
   }) {
     return ModelGenerateScreenBindings.assertRequired(
-      args: args ? this.args : null,
+      args: args ? src.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
+              ? src.isAccessibleOnlyIfLoggedInAndVerified
               : null,
       isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
+          isAccessibleOnlyIfLoggedIn ? src.isAccessibleOnlyIfLoggedIn : null,
       isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
-      isRedirectable: isRedirectable ? this.isRedirectable : null,
-      path: path ? this.path : null,
-      queryParameters: queryParameters ? this.queryParameters : null,
-      internalParameters: internalParameters ? this.internalParameters : null,
-      title: title ? this.title : null,
-      className: className ? this.className : null,
-      screenKey: screenKey ? this.screenKey : null,
-      keyStringCase: keyStringCase ? this.keyStringCase : null,
+          isAccessibleOnlyIfLoggedOut ? src.isAccessibleOnlyIfLoggedOut : null,
+      isRedirectable: isRedirectable ? src.isRedirectable : null,
+      path: path ? src.path : null,
+      queryParameters: queryParameters ? src.queryParameters : null,
+      internalParameters: internalParameters ? src.internalParameters : null,
+      title: title ? src.title : null,
+      className: className ? src.className : null,
+      screenKey: screenKey ? src.screenKey : null,
+      keyStringCase: keyStringCase ? src.keyStringCase : null,
     );
   }
 
