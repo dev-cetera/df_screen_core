@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.3]
+
+- Released @ 11/2024 (UTC)
+- chore: Update models
+
 ## [0.3.2]
 
 - Released @ 11/2024 (UTC)
