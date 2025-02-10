@@ -1,7 +1,7 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+// Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
 // source code is governed by an MIT-style license described in the LICENSE
 // file located in this project's root directory.
 //
@@ -47,8 +47,7 @@ part '_model_generate_screen_bindings.g.dart';
       fieldPath: ['isRedirectable'],
       fieldType: bool,
       nullable: true,
-      description:
-          'Enables URL redirection to this screen. If false, URL redirection is disabled.',
+      description: 'Enables URL redirection to this screen. If false, URL redirection is disabled.',
     ),
     Field(
       fieldPath: ['path'],
@@ -90,8 +89,7 @@ part '_model_generate_screen_bindings.g.dart';
       fieldPath: ['keyStringCase'],
       fieldType: String,
       nullable: true,
-      description:
-          'The string case for the keys of query and internal parameters.',
+      description: 'The string case for the keys of query and internal parameters.',
     ),
   },
 )
