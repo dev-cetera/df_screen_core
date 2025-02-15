@@ -136,9 +136,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
 
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelGenerateScreenBindings.from(
-    BaseModel another,
-  ) {
+  factory ModelGenerateScreenBindings.from(BaseModel another) {
     try {
       return fromOrNull(another)!;
     } catch (e) {
@@ -151,17 +149,13 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelGenerateScreenBindings? fromOrNull(
-    BaseModel? another,
-  ) {
+  static ModelGenerateScreenBindings? fromOrNull(BaseModel? another) {
     return fromJsonOrNull(another?.toJson())!;
   }
 
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelGenerateScreenBindings.of(
-    ModelGenerateScreenBindings another,
-  ) {
+  factory ModelGenerateScreenBindings.of(ModelGenerateScreenBindings another) {
     try {
       return ofOrNull(another)!;
     } catch (e) {
@@ -183,9 +177,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from [jsonString], which must be a valid JSON String. Throws if the
   /// conversion fails.
-  factory ModelGenerateScreenBindings.fromJsonString(
-    String jsonString,
-  ) {
+  factory ModelGenerateScreenBindings.fromJsonString(String jsonString) {
     try {
       return fromJsonStringOrNull(jsonString)!;
     } catch (e) {
@@ -197,9 +189,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from [jsonString], which must be a valid JSON String. Returns `null` if
   /// [jsonString] is `null` or if the conversion fails.
-  static ModelGenerateScreenBindings? fromJsonStringOrNull(
-    String? jsonString,
-  ) {
+  static ModelGenerateScreenBindings? fromJsonStringOrNull(String? jsonString) {
     try {
       if (jsonString!.isNotEmpty) {
         final decoded = letMapOrNull<String, dynamic>(jsonDecode(jsonString));
@@ -215,9 +205,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from [json], which must be a valid JSON object. Throws if the conversion
   /// fails.
-  factory ModelGenerateScreenBindings.fromJson(
-    Map<String, dynamic>? json,
-  ) {
+  factory ModelGenerateScreenBindings.fromJson(Map<String, dynamic>? json) {
     try {
       return fromJsonOrNull(json)!;
     } catch (e) {
@@ -233,41 +221,31 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     Map<String, dynamic>? json,
   ) {
     try {
-      final args = letMapOrNull<dynamic, dynamic>(json?['args'])
-          ?.map(
-            (p0, p1) => MapEntry(
-              p0,
-              p1,
-            ),
-          )
-          .nonNulls
-          .nullIfEmpty
-          ?.unmodifiable;
-      final isAccessibleOnlyIfLoggedInAndVerified =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedInAndVerified']);
-      final isAccessibleOnlyIfLoggedIn =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedIn']);
-      final isAccessibleOnlyIfLoggedOut =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedOut']);
-      final isRedirectable = letAsOrNull<bool>(json?['isRedirectable']);
-      final path = json?['path']?.toString().trim().nullIfEmpty;
-      final queryParameters = letSetOrNull<dynamic>(json?['queryParameters'])
-          ?.map(
-            (p0) => p0,
-          )
-          .nonNulls
-          .nullIfEmpty
-          ?.toSet()
-          .unmodifiable;
-      final internalParameters =
-          letSetOrNull<dynamic>(json?['internalParameters'])
-              ?.map(
-                (p0) => p0,
-              )
+      final args =
+          letMapOrNull<dynamic, dynamic>(json?['args'])
+              ?.map((p0, p1) => MapEntry(p0, p1))
               .nonNulls
               .nullIfEmpty
-              ?.toSet()
-              .unmodifiable;
+              ?.unmodifiable;
+      final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedInAndVerified'],
+      );
+      final isAccessibleOnlyIfLoggedIn = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedIn'],
+      );
+      final isAccessibleOnlyIfLoggedOut = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedOut'],
+      );
+      final isRedirectable = letAsOrNull<bool>(json?['isRedirectable']);
+      final path = json?['path']?.toString().trim().nullIfEmpty;
+      final queryParameters =
+          letSetOrNull<dynamic>(
+            json?['queryParameters'],
+          )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
+      final internalParameters =
+          letSetOrNull<dynamic>(
+            json?['internalParameters'],
+          )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
       final title = json?['title']?.toString().trim().nullIfEmpty;
       final className = json?['className']?.toString().trim().nullIfEmpty;
       final screenKey = json?['screenKey']?.toString().trim().nullIfEmpty;
@@ -296,9 +274,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from the query parameters of [uri]. Throws if the conversion
   /// fails.
-  factory ModelGenerateScreenBindings.fromUri(
-    Uri? uri,
-  ) {
+  factory ModelGenerateScreenBindings.fromUri(Uri? uri) {
     try {
       return fromUriOrNull(uri)!;
     } catch (e) {
@@ -310,9 +286,7 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   /// Constructs a new instance of [ModelGenerateScreenBindings],
   /// from the query parameters of [uri]. Returns `null` if [uri] is `null` or
   /// if the conversion fails.
-  static ModelGenerateScreenBindings? fromUriOrNull(
-    Uri? uri,
-  ) {
+  static ModelGenerateScreenBindings? fromUriOrNull(Uri? uri) {
     try {
       if (uri != null && uri.path == CLASS_NAME) {
         return ModelGenerateScreenBindings.fromJson(uri.queryParameters);
@@ -325,39 +299,20 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   }
 
   @override
-  Map<String, dynamic> toJson({
-    bool includeNulls = false,
-  }) {
+  Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 = args
-          ?.map(
-            (p0, p1) => MapEntry(
-              p0,
-              p1,
-            ),
-          )
-          .nonNulls
-          .nullIfEmpty;
+      final args0 =
+          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = isRedirectable;
       final path0 = path?.trim().nullIfEmpty;
-      final queryParameters0 = queryParameters
-          ?.map(
-            (p0) => p0,
-          )
-          .nonNulls
-          .nullIfEmpty
-          ?.toList();
-      final internalParameters0 = internalParameters
-          ?.map(
-            (p0) => p0,
-          )
-          .nonNulls
-          .nullIfEmpty
-          ?.toList();
+      final queryParameters0 =
+          queryParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
+      final internalParameters0 =
+          internalParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
       final title0 = title?.trim().nullIfEmpty;
       final className0 = className?.trim().nullIfEmpty;
       final screenKey0 = screenKey?.trim().nullIfEmpty;
@@ -531,7 +486,7 @@ extension ModelGenerateScreenBindingsX on ModelGenerateScreenBindings {
       args: args ?? this.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
+          this.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
           isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:

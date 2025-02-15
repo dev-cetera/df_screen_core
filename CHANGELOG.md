@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.1]
+
+- Released @ 2/2025 (UTC)
+- chore: Dart pub upgrade
+
 ## [0.4.0]
 
 - Released @ 2/2025 (UTC)

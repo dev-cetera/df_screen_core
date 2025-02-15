@@ -108,9 +108,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
 
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelScreenConfiguration.from(
-    BaseModel another,
-  ) {
+  factory ModelScreenConfiguration.from(BaseModel another) {
     try {
       return fromOrNull(another)!;
     } catch (e) {
@@ -123,17 +121,13 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelScreenConfiguration? fromOrNull(
-    BaseModel? another,
-  ) {
+  static ModelScreenConfiguration? fromOrNull(BaseModel? another) {
     return fromJsonOrNull(another?.toJson())!;
   }
 
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from the fields of [another] instance. Throws if the conversion fails.
-  factory ModelScreenConfiguration.of(
-    ModelScreenConfiguration another,
-  ) {
+  factory ModelScreenConfiguration.of(ModelScreenConfiguration another) {
     try {
       return ofOrNull(another)!;
     } catch (e) {
@@ -146,18 +140,14 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// from the fields of [another] instance. Returns `null` if [another] is
   /// `null` or if the conversion fails.
   @pragma('vm:prefer-inline')
-  static ModelScreenConfiguration? ofOrNull(
-    ModelScreenConfiguration? other,
-  ) {
+  static ModelScreenConfiguration? ofOrNull(ModelScreenConfiguration? other) {
     return fromJsonOrNull(other?.toJson());
   }
 
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from [jsonString], which must be a valid JSON String. Throws if the
   /// conversion fails.
-  factory ModelScreenConfiguration.fromJsonString(
-    String jsonString,
-  ) {
+  factory ModelScreenConfiguration.fromJsonString(String jsonString) {
     try {
       return fromJsonStringOrNull(jsonString)!;
     } catch (e) {
@@ -169,9 +159,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from [jsonString], which must be a valid JSON String. Returns `null` if
   /// [jsonString] is `null` or if the conversion fails.
-  static ModelScreenConfiguration? fromJsonStringOrNull(
-    String? jsonString,
-  ) {
+  static ModelScreenConfiguration? fromJsonStringOrNull(String? jsonString) {
     try {
       if (jsonString!.isNotEmpty) {
         final decoded = letMapOrNull<String, dynamic>(jsonDecode(jsonString));
@@ -187,9 +175,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from [json], which must be a valid JSON object. Throws if the conversion
   /// fails.
-  factory ModelScreenConfiguration.fromJson(
-    Map<String, dynamic>? json,
-  ) {
+  factory ModelScreenConfiguration.fromJson(Map<String, dynamic>? json) {
     try {
       return fromJsonOrNull(json)!;
     } catch (e) {
@@ -201,26 +187,23 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from [json], which must be a valid JSON object. Returns `null` if
   /// [json] is `null` or if the conversion fails.
-  static ModelScreenConfiguration? fromJsonOrNull(
-    Map<String, dynamic>? json,
-  ) {
+  static ModelScreenConfiguration? fromJsonOrNull(Map<String, dynamic>? json) {
     try {
-      final args = letMapOrNull<dynamic, dynamic>(json?['args'])
-          ?.map(
-            (p0, p1) => MapEntry(
-              p0,
-              p1,
-            ),
-          )
-          .nonNulls
-          .nullIfEmpty
-          ?.unmodifiable;
-      final isAccessibleOnlyIfLoggedInAndVerified =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedInAndVerified']);
-      final isAccessibleOnlyIfLoggedIn =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedIn']);
-      final isAccessibleOnlyIfLoggedOut =
-          letAsOrNull<bool>(json?['isAccessibleOnlyIfLoggedOut']);
+      final args =
+          letMapOrNull<dynamic, dynamic>(json?['args'])
+              ?.map((p0, p1) => MapEntry(p0, p1))
+              .nonNulls
+              .nullIfEmpty
+              ?.unmodifiable;
+      final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedInAndVerified'],
+      );
+      final isAccessibleOnlyIfLoggedIn = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedIn'],
+      );
+      final isAccessibleOnlyIfLoggedOut = letAsOrNull<bool>(
+        json?['isAccessibleOnlyIfLoggedOut'],
+      );
       final isRedirectable = letAsOrNull<bool>(json?['isRedirectable']);
       final path = json?['path']?.toString().trim().nullIfEmpty;
       final prevConfiguration = () {
@@ -247,9 +230,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from the query parameters of [uri]. Throws if the conversion
   /// fails.
-  factory ModelScreenConfiguration.fromUri(
-    Uri? uri,
-  ) {
+  factory ModelScreenConfiguration.fromUri(Uri? uri) {
     try {
       return fromUriOrNull(uri)!;
     } catch (e) {
@@ -261,9 +242,7 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// Constructs a new instance of [ModelScreenConfiguration],
   /// from the query parameters of [uri]. Returns `null` if [uri] is `null` or
   /// if the conversion fails.
-  static ModelScreenConfiguration? fromUriOrNull(
-    Uri? uri,
-  ) {
+  static ModelScreenConfiguration? fromUriOrNull(Uri? uri) {
     try {
       if (uri != null && uri.path == CLASS_NAME) {
         return ModelScreenConfiguration.fromJson(uri.queryParameters);
@@ -276,19 +255,10 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   }
 
   @override
-  Map<String, dynamic> toJson({
-    bool includeNulls = false,
-  }) {
+  Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 = args
-          ?.map(
-            (p0, p1) => MapEntry(
-              p0,
-              p1,
-            ),
-          )
-          .nonNulls
-          .nullIfEmpty;
+      final args0 =
+          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
@@ -422,7 +392,7 @@ extension ModelScreenConfigurationX on ModelScreenConfiguration {
       args: args ?? this.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
+          this.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
           isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:
