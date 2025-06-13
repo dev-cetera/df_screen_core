@@ -221,12 +221,9 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
     Map<String, dynamic>? json,
   ) {
     try {
-      final args =
-          letMapOrNull<dynamic, dynamic>(json?['args'])
-              ?.map((p0, p1) => MapEntry(p0, p1))
-              .nonNulls
-              .nullIfEmpty
-              ?.unmodifiable;
+      final args = letMapOrNull<dynamic, dynamic>(
+        json?['args'],
+      )?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty?.unmodifiable;
       final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
         json?['isAccessibleOnlyIfLoggedInAndVerified'],
       );
@@ -238,19 +235,19 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
       );
       final isRedirectable = letAsOrNull<bool>(json?['isRedirectable']);
       final path = json?['path']?.toString().trim().nullIfEmpty;
-      final queryParameters =
-          letSetOrNull<dynamic>(
-            json?['queryParameters'],
-          )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
-      final internalParameters =
-          letSetOrNull<dynamic>(
-            json?['internalParameters'],
-          )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
+      final queryParameters = letSetOrNull<dynamic>(
+        json?['queryParameters'],
+      )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
+      final internalParameters = letSetOrNull<dynamic>(
+        json?['internalParameters'],
+      )?.map((p0) => p0).nonNulls.nullIfEmpty?.toSet().unmodifiable;
       final title = json?['title']?.toString().trim().nullIfEmpty;
       final className = json?['className']?.toString().trim().nullIfEmpty;
       final screenKey = json?['screenKey']?.toString().trim().nullIfEmpty;
-      final keyStringCase =
-          json?['keyStringCase']?.toString().trim().nullIfEmpty;
+      final keyStringCase = json?['keyStringCase']
+          ?.toString()
+          .trim()
+          .nullIfEmpty;
       return ModelGenerateScreenBindings(
         args: args,
         isAccessibleOnlyIfLoggedInAndVerified:
@@ -301,18 +298,26 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   @override
   Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 =
-          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
+      final args0 = args
+          ?.map((p0, p1) => MapEntry(p0, p1))
+          .nonNulls
+          .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = isRedirectable;
       final path0 = path?.trim().nullIfEmpty;
-      final queryParameters0 =
-          queryParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
-      final internalParameters0 =
-          internalParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
+      final queryParameters0 = queryParameters
+          ?.map((p0) => p0)
+          .nonNulls
+          .nullIfEmpty
+          ?.toList();
+      final internalParameters0 = internalParameters
+          ?.map((p0) => p0)
+          .nonNulls
+          .nullIfEmpty
+          ?.toList();
       final title0 = title?.trim().nullIfEmpty;
       final className0 = className?.trim().nullIfEmpty;
       final screenKey0 = screenKey?.trim().nullIfEmpty;
@@ -521,12 +526,14 @@ extension ModelGenerateScreenBindingsX on ModelGenerateScreenBindings {
       args: args ? this.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
-              : null,
-      isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
-      isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
+          ? this.isAccessibleOnlyIfLoggedInAndVerified
+          : null,
+      isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn
+          ? this.isAccessibleOnlyIfLoggedIn
+          : null,
+      isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut
+          ? this.isAccessibleOnlyIfLoggedOut
+          : null,
       isRedirectable: isRedirectable ? this.isRedirectable : null,
       path: path ? this.path : null,
       queryParameters: queryParameters ? this.queryParameters : null,

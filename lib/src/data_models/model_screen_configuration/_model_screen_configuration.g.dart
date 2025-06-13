@@ -189,12 +189,9 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   /// [json] is `null` or if the conversion fails.
   static ModelScreenConfiguration? fromJsonOrNull(Map<String, dynamic>? json) {
     try {
-      final args =
-          letMapOrNull<dynamic, dynamic>(json?['args'])
-              ?.map((p0, p1) => MapEntry(p0, p1))
-              .nonNulls
-              .nullIfEmpty
-              ?.unmodifiable;
+      final args = letMapOrNull<dynamic, dynamic>(
+        json?['args'],
+      )?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty?.unmodifiable;
       final isAccessibleOnlyIfLoggedInAndVerified = letAsOrNull<bool>(
         json?['isAccessibleOnlyIfLoggedInAndVerified'],
       );
@@ -257,8 +254,10 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   @override
   Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 =
-          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
+      final args0 = args
+          ?.map((p0, p1) => MapEntry(p0, p1))
+          .nonNulls
+          .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
@@ -419,12 +418,14 @@ extension ModelScreenConfigurationX on ModelScreenConfiguration {
       args: args ? this.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
-              : null,
-      isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
-      isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
+          ? this.isAccessibleOnlyIfLoggedInAndVerified
+          : null,
+      isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn
+          ? this.isAccessibleOnlyIfLoggedIn
+          : null,
+      isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut
+          ? this.isAccessibleOnlyIfLoggedOut
+          : null,
       isRedirectable: isRedirectable ? this.isRedirectable : null,
       path: path ? this.path : null,
       prevConfiguration: prevConfiguration ? this.prevConfiguration : null,
