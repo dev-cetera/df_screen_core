@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.8]
+
+- Released @ 2/2026 (UTC)
+- Bump version
+
 ## [0.5.7]
 
 - Released @ 2/2026 (UTC)
