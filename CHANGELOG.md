@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.7]
+
+- Released @ 2/2026 (UTC)
+- Update docs and add working example
+
 ## [0.5.5]
 
 - Released @ 6/2025 (UTC)

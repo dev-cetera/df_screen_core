@@ -244,8 +244,10 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
       final title = json?['title']?.toString().trim().nullIfEmpty;
       final className = json?['className']?.toString().trim().nullIfEmpty;
       final screenKey = json?['screenKey']?.toString().trim().nullIfEmpty;
-      final keyStringCase =
-          json?['keyStringCase']?.toString().trim().nullIfEmpty;
+      final keyStringCase = json?['keyStringCase']
+          ?.toString()
+          .trim()
+          .nullIfEmpty;
       return ModelGenerateScreenBindings(
         args: args,
         isAccessibleOnlyIfLoggedInAndVerified:
@@ -296,18 +298,26 @@ class ModelGenerateScreenBindings extends _ModelGenerateScreenBindings {
   @override
   Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 =
-          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
+      final args0 = args
+          ?.map((p0, p1) => MapEntry(p0, p1))
+          .nonNulls
+          .nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
       final isAccessibleOnlyIfLoggedOut0 = isAccessibleOnlyIfLoggedOut;
       final isRedirectable0 = isRedirectable;
       final path0 = path?.trim().nullIfEmpty;
-      final queryParameters0 =
-          queryParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
-      final internalParameters0 =
-          internalParameters?.map((p0) => p0).nonNulls.nullIfEmpty?.toList();
+      final queryParameters0 = queryParameters
+          ?.map((p0) => p0)
+          .nonNulls
+          .nullIfEmpty
+          ?.toList();
+      final internalParameters0 = internalParameters
+          ?.map((p0) => p0)
+          .nonNulls
+          .nullIfEmpty
+          ?.toList();
       final title0 = title?.trim().nullIfEmpty;
       final className0 = className?.trim().nullIfEmpty;
       final screenKey0 = screenKey?.trim().nullIfEmpty;
@@ -481,7 +491,7 @@ extension ModelGenerateScreenBindingsX on ModelGenerateScreenBindings {
       args: args ?? this.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-              this.isAccessibleOnlyIfLoggedInAndVerified,
+          this.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
           isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:
@@ -516,12 +526,14 @@ extension ModelGenerateScreenBindingsX on ModelGenerateScreenBindings {
       args: args ? this.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-              ? this.isAccessibleOnlyIfLoggedInAndVerified
-              : null,
-      isAccessibleOnlyIfLoggedIn:
-          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
-      isAccessibleOnlyIfLoggedOut:
-          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
+          ? this.isAccessibleOnlyIfLoggedInAndVerified
+          : null,
+      isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn
+          ? this.isAccessibleOnlyIfLoggedIn
+          : null,
+      isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut
+          ? this.isAccessibleOnlyIfLoggedOut
+          : null,
       isRedirectable: isRedirectable ? this.isRedirectable : null,
       path: path ? this.path : null,
       queryParameters: queryParameters ? this.queryParameters : null,
