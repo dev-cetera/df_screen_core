@@ -48,7 +48,8 @@ part '_model_generate_screen_bindings.g.dart';
       fieldPath: ['isRedirectable'],
       fieldType: bool,
       nullable: true,
-      description: 'Enables URL redirection to this screen. If false, URL redirection is disabled.',
+      description:
+          'Enables URL redirection to this screen. If false, URL redirection is disabled.',
     ),
     Field(
       fieldPath: ['path'],
@@ -90,7 +91,8 @@ part '_model_generate_screen_bindings.g.dart';
       fieldPath: ['keyStringCase'],
       fieldType: String,
       nullable: true,
-      description: 'The string case for the keys of query and internal parameters.',
+      description:
+          'The string case for the keys of query and internal parameters.',
     ),
   },
 )
