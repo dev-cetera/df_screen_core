@@ -254,10 +254,8 @@ class ModelScreenConfiguration extends _ModelScreenConfiguration {
   @override
   Map<String, dynamic> toJson({bool includeNulls = false}) {
     try {
-      final args0 = args
-          ?.map((p0, p1) => MapEntry(p0, p1))
-          .nonNulls
-          .nullIfEmpty;
+      final args0 =
+          args?.map((p0, p1) => MapEntry(p0, p1)).nonNulls.nullIfEmpty;
       final isAccessibleOnlyIfLoggedInAndVerified0 =
           isAccessibleOnlyIfLoggedInAndVerified;
       final isAccessibleOnlyIfLoggedIn0 = isAccessibleOnlyIfLoggedIn;
@@ -391,7 +389,7 @@ extension ModelScreenConfigurationX on ModelScreenConfiguration {
       args: args ?? this.args,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified ??
-          this.isAccessibleOnlyIfLoggedInAndVerified,
+              this.isAccessibleOnlyIfLoggedInAndVerified,
       isAccessibleOnlyIfLoggedIn:
           isAccessibleOnlyIfLoggedIn ?? this.isAccessibleOnlyIfLoggedIn,
       isAccessibleOnlyIfLoggedOut:
@@ -418,14 +416,12 @@ extension ModelScreenConfigurationX on ModelScreenConfiguration {
       args: args ? this.args : null,
       isAccessibleOnlyIfLoggedInAndVerified:
           isAccessibleOnlyIfLoggedInAndVerified
-          ? this.isAccessibleOnlyIfLoggedInAndVerified
-          : null,
-      isAccessibleOnlyIfLoggedIn: isAccessibleOnlyIfLoggedIn
-          ? this.isAccessibleOnlyIfLoggedIn
-          : null,
-      isAccessibleOnlyIfLoggedOut: isAccessibleOnlyIfLoggedOut
-          ? this.isAccessibleOnlyIfLoggedOut
-          : null,
+              ? this.isAccessibleOnlyIfLoggedInAndVerified
+              : null,
+      isAccessibleOnlyIfLoggedIn:
+          isAccessibleOnlyIfLoggedIn ? this.isAccessibleOnlyIfLoggedIn : null,
+      isAccessibleOnlyIfLoggedOut:
+          isAccessibleOnlyIfLoggedOut ? this.isAccessibleOnlyIfLoggedOut : null,
       isRedirectable: isRedirectable ? this.isRedirectable : null,
       path: path ? this.path : null,
       prevConfiguration: prevConfiguration ? this.prevConfiguration : null,

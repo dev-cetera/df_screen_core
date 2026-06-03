@@ -34,11 +34,12 @@ environment:
 ## -----------------------------------------------------------------------------
 
 dependencies:
-  df_generate_dart_models_core: ^0.9.25
+  df_generate_dart_models_core: ^0.10.0
   df_log: ^0.5.1
 
 ## -----------------------------------------------------------------------------
 
 dev_dependencies:
   lints: ^6.0.0
+  test: ^1.26.2
 
