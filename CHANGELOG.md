@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.7.0]
+
+- Released @ 6/2026 (UTC)
+- New: `XxxFieldNames.$values` / `$primaryKey` / `$foreignKeys` and `static const tableName` on the regenerated data-model classes — surfaces declaration-order field names, the primary key, and the foreign-key → referenced-class map without reflection
+- Pulls in df_generate_dart_models_core 0.11.0
+
 ## [0.5.8]
 
 - Released @ 2/2026 (UTC)
