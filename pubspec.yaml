@@ -13,12 +13,9 @@
 
 name: df_screen_core
 homepage: https://dev-cetera.com/
-funding:
-  - https://www.buymeacoffee.com/dev_cetera
-  - https://www.patreon.com/c/robelator
-  - https://github.com/sponsors/robelator
+repository: https://github.com/dev-cetera/df_screen_core
 description: A package that provides core code for the df_screen package.
-version: 0.7.1
+version: 0.8.0
 topics:
   - user-interface
   - widgets
